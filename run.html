@@ -1,0 +1,104 @@
+<h3>Total job durations (s)</h3>
+<div width="100%">
+    <canvas id="chart1" height="250px"></canvas>
+</div>
+<h3>Job duration by step (s)</h3>
+<div>
+    <canvas id="chart2" height="250px"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    function getElapsedTimeSeconds(node) {
+        startTime = ("started_at" in node) ? node["started_at"]: node["created_at"];
+        endTime = ("completed_at" in node) ? node["completed_at"]: node["updated_at"];
+        return (Date.parse(endTime) - Date.parse(startTime)) / 1000;
+    }
+
+    fetch("./run.json")
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        let jobNames = [];
+        let jobTimes = [];
+        let stepIndices = {};
+        let stepCount = 0;
+        let datasets = [];
+        for (let jobIndex = 0; jobIndex < data.jobs.length; jobIndex++) {
+            let job = data.jobs[jobIndex];
+            if (job.name != "Time-Report") {
+                jobNames.push(job.name);
+                jobTimes.push(getElapsedTimeSeconds(job));
+                job.steps.forEach(step => {
+                    let stepTime = getElapsedTimeSeconds(step);
+                    if (step.name in stepIndices) {
+                        let stepIndex = stepIndices[step.name];
+                        datasets[stepIndex].data[jobIndex] = stepTime;
+                    } else {
+                        stepIndices[step.name] = stepCount;
+                        datasets.push({
+                            label: step.name,
+                            data: [stepTime],
+                            borderWidth: 1
+                        });
+                        stepCount++;
+                    }
+                });
+            }
+        }
+
+        new Chart(document.getElementById('chart1'),
+            {
+                type: 'bar',
+                data: {
+                    labels: jobNames,
+                    datasets: [{
+                        label: 'Job run time (s)',
+                        data: jobTimes,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                autoSkip: false
+                            }
+                        },
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+        new Chart(document.getElementById('chart2'),
+            {
+                type: 'bar',
+                data: {
+                    labels: jobNames,
+                    datasets: datasets
+                },
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            stacked: true
+                        },
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+    });
+</script>
