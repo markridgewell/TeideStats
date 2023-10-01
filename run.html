@@ -26,7 +26,7 @@
             let stepCount = 0;
             let datasets = [];
 
-            jobs = data.jobs_data.jobs.filter(job => { return job.name != "Time-Report"; });
+            jobs = data.job_data.jobs.filter(job => { return job.name != "Time-Report"; });
             jobs.sort(function (a, b) { return a.name > b.name; });
             for (let jobIndex = 0; jobIndex < jobs.length; jobIndex++) {
                 let job = jobs[jobIndex];
@@ -113,7 +113,7 @@
                 .then((data) => buildCharts(data));
         } else {
             const dummyData = {
-                "jobs_data": {
+                "job_data": {
                     "jobs": [
                         {
                             "completed_at": "2023-10-01T21:25:57Z",
