@@ -1,26 +1,22 @@
 <h3>Total job durations (s)</h3>
-<div width="100%">
-    <canvas id="chart1" height="250px"></canvas>
+<div>
+    <canvas id="chart1"></canvas>
 </div>
 <h3>Job duration by step (s)</h3>
 <div>
-    <canvas id="chart2" height="250px"></canvas>
+    <canvas id="chart2"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
     function getElapsedTimeSeconds(node) {
-        startTime = ("started_at" in node) ? node["started_at"]: node["created_at"];
-        endTime = ("completed_at" in node) ? node["completed_at"]: node["updated_at"];
+        startTime = ("started_at" in node) ? node["started_at"] : node["created_at"];
+        endTime = ("completed_at" in node) ? node["completed_at"] : node["updated_at"];
         return (Date.parse(endTime) - Date.parse(startTime)) / 1000;
     }
 
-    fetch("./run.json")
-    .then((res) => {
-        return res.json();
-    })
-    .then((data) => {
+    function buildCharts(data) {
         let jobNames = [];
         let jobTimes = [];
         let stepIndices = {};
@@ -100,5 +96,1080 @@
                     }
                 }
             });
-    });
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("commit")) {
+        fetch("./build_times/" + params.commit + ".json")
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => buildCharts(data));
+    } else {
+        const dummyData = {
+            "jobs": [
+                {
+                    "completed_at": "2023-10-01T21:25:57Z",
+                    "name": "Linux-Debug-g++-11",
+                    "started_at": "2023-10-01T21:23:08Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:08.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:11.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:16.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:11.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:43.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:16.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:01.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:23:43.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:50.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:24:02.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:50.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:25:50.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:25:50.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:57.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:25:57.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:29:37Z",
+                    "name": "Windows-Debug-msvc2019",
+                    "started_at": "2023-10-01T21:23:08Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:08.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:12.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:11.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:36.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:14.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:37.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:36.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:39.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:24:38.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:40.000+02:00",
+                            "name": "Save CMake trace",
+                            "started_at": "2023-10-01T23:25:40.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:28:54.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:25:41.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:28:54.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:28:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:13.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:28:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:13.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:29:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:13.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:29:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:16.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:29:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:33.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:29:17.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:33.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:29:33.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:35.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:29:34.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:29:35.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:29:35.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:28:05Z",
+                    "name": "Linux-Debug-clang++-16",
+                    "started_at": "2023-10-01T21:23:11Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:12.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:10.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:13.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:19.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:29.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:20.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:54.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:24:31.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:37.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:24:55.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:38.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:27:38.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:47.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:27:38.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:47.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:27:47.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:47.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:27:47.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:50.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:27:47.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:28:00.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:27:51.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:28:01.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:28:01.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:28:01.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:28:01.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:28:01.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:28:01.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:32:06Z",
+                    "name": "Windows-Debug-msvc2022",
+                    "started_at": "2023-10-01T21:23:10Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:10.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:12.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:11.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:36.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:49.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:36.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:40.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:24:50.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:40.000+02:00",
+                            "name": "Save CMake trace",
+                            "started_at": "2023-10-01T23:27:40.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:29.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:27:40.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:30.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:31:30.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:55.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:31:30.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:55.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:31:55.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:55.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:31:55.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:57.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:31:55.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:02.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:31:58.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:03.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:32:03.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:04.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:32:03.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:04.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:32:04.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:26:40Z",
+                    "name": "Linux-Release-g++-11",
+                    "started_at": "2023-10-01T21:23:09Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:10.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:08.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:10.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:10.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:15.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:11.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:41.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:15.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:57.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:23:42.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:34.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:23:58.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:34.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:26:34.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:26:34.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:26:37.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:26:37.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:26:37.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:26:37.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:26:37.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:26:37.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:37.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:26:37.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:31:31Z",
+                    "name": "Windows-Debug-msvc2022-clang",
+                    "started_at": "2023-10-01T21:23:09Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:10.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:09.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:10.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:33.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:12.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:05.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:34.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:47.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:25:05.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:47.000+02:00",
+                            "name": "Save CMake trace",
+                            "started_at": "2023-10-01T23:26:47.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:15.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:26:48.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:16.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:31:16.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:26.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:31:16.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:27.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:31:27.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:27.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:31:27.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:28.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:31:27.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:28.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:31:28.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:28.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:31:28.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:30.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:31:28.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:31:30.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:31:30.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:25:56Z",
+                    "name": "Linux-Release-clang++-16",
+                    "started_at": "2023-10-01T21:23:08Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:08.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:07.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:08.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:08.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:12.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:08.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:52.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:03.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:23:52.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:51.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:24:03.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:51.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:25:51.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:25:51.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:54.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:25:54.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:30:42Z",
+                    "name": "Windows-Release-msvc2019",
+                    "started_at": "2023-10-01T21:23:10Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:12.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:10.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:13.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:12.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:36.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:15.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:41.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:37.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:44.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:24:41.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:45.000+02:00",
+                            "name": "Save CMake trace",
+                            "started_at": "2023-10-01T23:25:44.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:06.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:25:45.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:07.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:30:07.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:26.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:30:07.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:27.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:30:27.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:27.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:30:27.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:30.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:30:27.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:38.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:30:30.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:39.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:30:39.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:40.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:30:39.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:30:40.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:30:40.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:27:18Z",
+                    "name": "Linux-Debug-clang++-16-asan",
+                    "started_at": "2023-10-01T21:23:09Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:08.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:12.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:12.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:17.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:12.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:09.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:18.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:33.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:24:09.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:06.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:24:33.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:06.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:27:06.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:27:06.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:27:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:27:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:27:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:27:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:27:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:27:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:27:13.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:27:13.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:32:32Z",
+                    "name": "Windows-Release-msvc2022",
+                    "started_at": "2023-10-01T21:23:11Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:10.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:13.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:12.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:36.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:51.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:36.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:32.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:24:51.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:33.000+02:00",
+                            "name": "Save CMake trace",
+                            "started_at": "2023-10-01T23:26:32.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:01.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:26:33.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:01.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:32:01.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:19.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:32:01.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:20.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:32:20.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:20.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:32:20.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:23.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:32:20.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:29.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:32:24.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:29.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:32:29.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:31.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:32:30.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:32:31.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:32:31.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:26:00Z",
+                    "name": "Linux-Debug-clang++-16-ubsan",
+                    "started_at": "2023-10-01T21:23:08Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:09.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:07.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:09.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:09.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:14.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:09.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:55.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:15.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:13.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:23:56.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:52.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:24:14.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:53.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:25:53.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:57.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:25:53.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:57.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:25:57.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:57.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:25:57.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:57.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:25:57.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:57.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:25:57.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:58.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:25:57.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:00.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:26:00.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:25:58.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:25:58.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:33:53Z",
+                    "name": "Windows-Release-msvc2022-clang",
+                    "started_at": "2023-10-01T21:23:10Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:23:11.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:23:10.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:12.000+02:00",
+                            "name": "Print job ID",
+                            "started_at": "2023-10-01T23:23:11.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:23:34.000+02:00",
+                            "name": "Checkout",
+                            "started_at": "2023-10-01T23:23:13.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:24:55.000+02:00",
+                            "name": "Install dependencies",
+                            "started_at": "2023-10-01T23:23:34.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:56.000+02:00",
+                            "name": "Configure CMake",
+                            "started_at": "2023-10-01T23:24:55.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:26:56.000+02:00",
+                            "name": "Save CMake trace",
+                            "started_at": "2023-10-01T23:26:56.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:40.000+02:00",
+                            "name": "Build",
+                            "started_at": "2023-10-01T23:26:56.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:40.000+02:00",
+                            "name": "Save CMake output logs",
+                            "started_at": "2023-10-01T23:33:40.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:48.000+02:00",
+                            "name": "Test",
+                            "started_at": "2023-10-01T23:33:40.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:48.000+02:00",
+                            "name": "Save render test output",
+                            "started_at": "2023-10-01T23:33:48.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:48.000+02:00",
+                            "name": "Save test log",
+                            "started_at": "2023-10-01T23:33:48.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:50.000+02:00",
+                            "name": "Upload coverage report",
+                            "started_at": "2023-10-01T23:33:48.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:50.000+02:00",
+                            "name": "Save coverage report",
+                            "started_at": "2023-10-01T23:33:50.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:50.000+02:00",
+                            "name": "Post Install dependencies",
+                            "started_at": "2023-10-01T23:33:50.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:52.000+02:00",
+                            "name": "Post Checkout",
+                            "started_at": "2023-10-01T23:33:51.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:33:52.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:33:52.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                },
+                {
+                    "completed_at": "2023-10-01T21:42:32Z",
+                    "name": "Time-Report",
+                    "started_at": "2023-10-01T21:42:25Z",
+                    "steps": [
+                        {
+                            "completed_at": "2023-10-01T23:42:26.000+02:00",
+                            "name": "Set up job",
+                            "started_at": "2023-10-01T23:42:25.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:42:30.000+02:00",
+                            "name": "Build dmnemec/copy_file_to_another_repo_action@v1.1.1",
+                            "started_at": "2023-10-01T23:42:26.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:42:30.000+02:00",
+                            "name": "Get workflow run data",
+                            "started_at": "2023-10-01T23:42:30.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:42:31.000+02:00",
+                            "name": "Push workflow run data",
+                            "started_at": "2023-10-01T23:42:30.000+02:00"
+                        },
+                        {
+                            "completed_at": "2023-10-01T23:42:31.000+02:00",
+                            "name": "Complete job",
+                            "started_at": "2023-10-01T23:42:31.000+02:00"
+                        }
+                    ],
+                    "workflow_name": "Build-and-Test"
+                }
+            ],
+            "total_count": 13
+        };
+        buildCharts(dummyData);
+    }
 </script>
