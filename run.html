@@ -2,21 +2,23 @@
 <html>
 
 <body>
-    <h2>Total job durations (s)</h2>
+    <h2>Total job durations</h2>
     <div>
         <canvas id="chart1"></canvas>
     </div>
-    <h2>Job duration by step (s)</h2>
+    <h2>Job duration by step</h2>
     <div>
         <canvas id="chart2"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
     <script>
         function getElapsedTimeSeconds(node) {
             startTime = ("started_at" in node) ? node["started_at"] : node["created_at"];
             endTime = ("completed_at" in node) ? node["completed_at"] : node["updated_at"];
-            return (Date.parse(endTime) - Date.parse(startTime)) / 1000;
+            return (Date.parse(endTime) - Date.parse(startTime));
         }
 
         function buildCharts(data) {
@@ -49,13 +51,37 @@
                 });
             }
 
+            const plugins = {
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.x !== null) {
+                                let dateStr = new Date(context.parsed.x).toISOString().slice(14, 19);
+                                if (dateStr[0] == '0') {
+                                    dateStr = dateStr.slice(1);
+                                }
+                                label += dateStr;
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    display: false
+                }
+            };
+
             new Chart(document.getElementById('chart1'),
                 {
                     type: 'bar',
                     data: {
                         labels: jobNames,
                         datasets: [{
-                            label: 'Job run time (s)',
+                            label: 'Job run time',
                             data: jobTimes,
                             borderWidth: 1
                         }]
@@ -63,6 +89,15 @@
                     options: {
                         indexAxis: 'y',
                         scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'minute',
+                                    displayFormats: {
+                                        minute: 'm:ss',
+                                    }
+                                }
+                            },
                             y: {
                                 beginAtZero: true,
                                 ticks: {
@@ -70,11 +105,7 @@
                                 }
                             },
                         },
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
-                        }
+                        plugins: plugins
                     }
                 });
 
@@ -89,17 +120,24 @@
                         indexAxis: 'y',
                         scales: {
                             x: {
-                                stacked: true
+                                stacked: true,
+                                type: 'time',
+                                time: {
+                                    unit: 'minute',
+                                    displayFormats: {
+                                        minute: 'm:ss',
+                                    }
+                                }
                             },
                             y: {
-                                stacked: true
+                                stacked: true,
+                                beginAtZero: true,
+                                ticks: {
+                                    autoSkip: false
+                                }
                             },
                         },
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
-                        }
+                        plugins: plugins
                     }
                 });
         }
