@@ -2,19 +2,28 @@
 <html>
 
 <body>
+    <div style="float:right">
+        <input type="checkbox" id="modeCheckbox" onclick="switchMode();">Breakdown by step</input>
+    </div>
     <h2>Total job durations</h2>
-    <div>
+    <div id="div1">
         <canvas id="chart1"></canvas>
     </div>
-    <h2>Job duration by step</h2>
-    <div>
+    <div id="div2">
         <canvas id="chart2"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
-    <script>
+    <script type="text/javascript">
+        function switchMode() {
+            console.log("Hello");
+            const mode = document.getElementById('modeCheckbox').checked;
+            document.getElementById('div1').hidden = mode;
+            document.getElementById('div2').hidden = !mode;
+        }
+
         function getElapsedTime(node) {
             startTime = ("started_at" in node) ? node["started_at"] : node["created_at"];
             endTime = ("completed_at" in node) ? node["completed_at"] : node["updated_at"];
@@ -1223,6 +1232,8 @@
             };
             buildCharts(dummyData);
         }
+
+        document.getElementById("div2").hidden = true;
     </script>
 </body>
 
