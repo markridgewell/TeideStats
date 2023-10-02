@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="./functions.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         function switchMode() {
@@ -22,12 +23,6 @@
             const mode = document.getElementById('modeCheckbox').checked;
             document.getElementById('div1').hidden = mode;
             document.getElementById('div2').hidden = !mode;
-        }
-
-        function getElapsedTime(node) {
-            startTime = ("started_at" in node) ? node["started_at"] : node["created_at"];
-            endTime = ("completed_at" in node) ? node["completed_at"] : node["updated_at"];
-            return (Date.parse(endTime) - Date.parse(startTime));
         }
 
         function buildCharts(data) {
@@ -39,7 +34,8 @@
             let maxDuration = 0;
 
             jobs = data.job_data.jobs.filter(job => { return job.name != "Time-Report"; });
-            jobs.sort(function (a, b) { return a.name > b.name; });
+            jobs.sort(function (a, b) { return a.name > b.name ? 1 : -1; });
+            console.log(jobs);
             for (let jobIndex = 0; jobIndex < jobs.length; jobIndex++) {
                 let job = jobs[jobIndex];
                 jobNames.push(job.name);
@@ -72,11 +68,7 @@
                                 label += ': ';
                             }
                             if (context.parsed.x !== null) {
-                                let dateStr = new Date(context.parsed.x).toISOString().slice(14, 19);
-                                if (dateStr[0] == '0') {
-                                    dateStr = dateStr.slice(1);
-                                }
-                                label += dateStr;
+                                label += asMinutesSeconds(context.parsed.x);
                             }
                             return label;
                         }
@@ -158,11 +150,8 @@
 
         const params = new URLSearchParams(window.location.search);
         if (params.has("commit")) {
-            fetch("./build_times/" + params.get("commit") + ".json")
-                .then((res) => {
-                    return res.json();
-                })
-                .then((data) => buildCharts(data));
+            const filename = "./build_times/" + params.get("commit") + ".json";
+            fetchJson(filename).then(buildCharts);
         } else {
             const dummyData = {
                 "job_data": {
