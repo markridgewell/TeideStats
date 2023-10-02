@@ -1,0 +1,21 @@
+name: Update commit list
+
+on: push
+
+jobs:
+  update-commits-json:
+    runs-on: ubuntu-latest
+
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: python update_commit_list.py
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        file_pattern: commits.json
+        commit_message: Update commits.json
