@@ -15,7 +15,7 @@
         src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
     <script>
-        function getElapsedTimeSeconds(node) {
+        function getElapsedTime(node) {
             startTime = ("started_at" in node) ? node["started_at"] : node["created_at"];
             endTime = ("completed_at" in node) ? node["completed_at"] : node["updated_at"];
             return (Date.parse(endTime) - Date.parse(startTime));
@@ -27,15 +27,18 @@
             let stepIndices = {};
             let stepCount = 0;
             let datasets = [];
+            let maxDuration = 0;
 
             jobs = data.job_data.jobs.filter(job => { return job.name != "Time-Report"; });
             jobs.sort(function (a, b) { return a.name > b.name; });
             for (let jobIndex = 0; jobIndex < jobs.length; jobIndex++) {
                 let job = jobs[jobIndex];
                 jobNames.push(job.name);
-                jobTimes.push(getElapsedTimeSeconds(job));
+                duration = getElapsedTime(job);
+                maxDuration = Math.max(duration, maxDuration);
+                jobTimes.push(duration);
                 job.steps.forEach(step => {
-                    let stepTime = getElapsedTimeSeconds(step);
+                    let stepTime = getElapsedTime(step);
                     if (step.name in stepIndices) {
                         let stepIndex = stepIndices[step.name];
                         datasets[stepIndex].data[jobIndex] = stepTime;
@@ -91,6 +94,7 @@
                         scales: {
                             x: {
                                 type: 'time',
+                                max: maxDuration,
                                 time: {
                                     unit: 'minute',
                                     displayFormats: {
@@ -122,6 +126,7 @@
                             x: {
                                 stacked: true,
                                 type: 'time',
+                                max: maxDuration,
                                 time: {
                                     unit: 'minute',
                                     displayFormats: {
