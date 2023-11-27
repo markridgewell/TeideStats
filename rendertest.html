@@ -2,13 +2,19 @@
 <html>
 
 <body>
-<h1>Hello!</h1>
+<!--Enter your token: <input type="password" id="token"/>
+<input type="submit" value="Submit" />-->
 <div id="div">
 </div>
 
 <script type="module">
+import { Octokit } from "https://esm.sh/@octokit/core";
 
-import { request } from "https://esm.sh/@octokit/request";
+const token = prompt("Enter your token:");
+
+const octokit = new Octokit({
+    auth: token
+});
 
 function elem(type, text) {
     var elem = document.createElement(type);
@@ -26,22 +32,28 @@ function a(text, href) {
     return a;
 }
 
-request('GET /repos/{owner}/{repo}/actions/artifacts', {
-  owner: 'markridgewell',
-  repo: 'Teide',
-  headers: {
-    'X-GitHub-Api-Version': '2022-11-28'
-  }
-}).then(response => {
+async function getArtifacts() {
+    const response = await octokit.request('GET /repos/{owner}/{repo}/actions/artifacts', {
+        owner: 'markridgewell',
+        repo: 'Teide',
+        headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+        }
+    })
+    
     console.log(response);
     const div = document.getElementById("div");
     div.appendChild(p(`${response.data.artifacts.length} artifacts found`));
     const list = document.createElement('ol');
     for (const artifact of response.data.artifacts) {
-        list.appendChild(elem('li', a(artifact.name, artifact.archive_download_url)));
+        const link = elem('a', document.createTextNode(artifact.name));
+        link.href = `rendertest_run.html?artifact_id=${artifact.id}&token=${token}`;
+        list.appendChild(elem('li', link));
     }
     div.appendChild(list);
-});
+}
+
+getArtifacts();
 </script>
 
 </body>
