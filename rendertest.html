@@ -18,7 +18,6 @@ const run_id = params.get('run_id');
 
 const tokenField = document.getElementById("token");
 tokenField.addEventListener("change", (event) => {
-    console.log(event);
     const token = event.srcElement.value;
     updateArtifactList(token);
     setCookie('token', token, 30);
@@ -83,13 +82,15 @@ async function getArtifacts(token) {
 }
 
 async function updateArtifactList(token) {
+    if (!token) {
+        return;
+    }
+
     const div = document.getElementById("jobList");
 
     try {
         const response = await getArtifacts(token);
-        console.log(response);
         const runArtifacts = response.data.artifacts.filter(_ => _.workflow_run.id == run_id);
-        console.log(runArtifacts);
 
         let nodes = new Array();
         nodes.push(p(`${runArtifacts.length} artifacts found`));
