@@ -12,7 +12,7 @@ Enter your token: <input type="password" id="token"/>
 
 <script type="module">
 import { Octokit } from "https://esm.sh/@octokit/core";
-import * as cookies from "./cookies.js";
+import { getCookie, setCookie } from "./cookies.js";
 
 const params = new URLSearchParams(window.location.search);
 const run_id = params.get('run_id');
@@ -21,10 +21,10 @@ const tokenField = document.getElementById("token");
 tokenField.addEventListener("change", (event) => {
     const token = event.srcElement.value;
     updateArtifactList(token);
-    cookies.setCookie('token', token, 30);
+    setCookie('token', token, 30);
 });
 
-let token = cookies.getCookie('token');
+let token = getCookie('token');
 if (token != undefined) {
     tokenField.value = token;
 }
