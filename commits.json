@@ -2,707 +2,1059 @@
     "commits": [
         {
             "hash": "b0c337f78665c394eaa20997d916efeabc78ccbc",
-            "created_at": "2023-10-02T00:11:56Z"
+            "created_at": "2023-10-02T00:11:56Z",
+            "build_time_s": 1732.0,
+            "display_title": "Add job to report build times (#50)"
         },
         {
             "hash": "f849a086a3a6ac0f099b3fba7a0efbadab85b353",
-            "created_at": "2023-10-02T21:49:37Z"
+            "created_at": "2023-10-02T21:49:37Z",
+            "build_time_s": 895.0,
+            "display_title": "Remove newlines from generated json files"
         },
         {
             "hash": "ffd485019097d40aa28669619a511e1b8ba850a2",
-            "created_at": "2023-10-02T22:29:25Z"
+            "created_at": "2023-10-02T22:29:25Z",
+            "build_time_s": 794.0,
+            "display_title": "Fix view parameters not working if no scene parameters set"
         },
         {
             "hash": "94a5f1583d8c802c64ce253610e13c32a7409234",
-            "created_at": "2023-10-05T01:17:51Z"
+            "created_at": "2023-10-05T01:17:51Z",
+            "build_time_s": 632.0,
+            "display_title": "Add VulkanMemoryAllocator library (#33)"
         },
         {
             "hash": "a18aee4878b4a366cd51c7c3b7e8783126cd81d7",
-            "created_at": "2023-10-05T20:18:55Z"
+            "created_at": "2023-10-05T20:18:55Z",
+            "build_time_s": 780.0,
+            "display_title": "Add benchmarks (#32)"
         },
         {
             "hash": "f64bd3ce8e5d21363727e041a7b29fd1ddf62579",
-            "created_at": "2023-10-05T21:33:10Z"
+            "created_at": "2023-10-05T21:33:10Z",
+            "build_time_s": 627.0,
+            "display_title": "Refactor GpuExecutor and surface command buffers (#40)"
         },
         {
             "hash": "17c21f6dacc5e07b84a003be0281c5b4ac32230f",
-            "created_at": "2023-10-05T22:50:43Z"
+            "created_at": "2023-10-05T22:50:43Z",
+            "build_time_s": 428.0,
+            "display_title": "Optimise CI build-and-test workflow (#55)"
         },
         {
             "hash": "bfd7d1ade061448551361f72aa60d37fbc709581",
-            "created_at": "2023-10-06T20:56:36Z"
+            "created_at": "2023-10-06T20:56:36Z",
+            "build_time_s": 503.0,
+            "display_title": "Fix conflicts when running clang-tidy (#57)"
         },
         {
             "hash": "a7aa4dddf528637554aea50f9478e3364f473ad3",
-            "created_at": "2023-10-06T21:34:08Z"
+            "created_at": "2023-10-06T21:34:08Z",
+            "build_time_s": 488.0,
+            "display_title": "Save clang-tidy fixes as a build artifact (#58)"
         },
         {
             "hash": "52a7c031eecdefa809a2eb11ee8d2d9897f29f16",
-            "created_at": "2023-10-06T21:54:39Z"
+            "created_at": "2023-10-06T21:54:39Z",
+            "build_time_s": 513.0,
+            "display_title": "Exclude build and test workflow on certain paths (#59)"
         },
         {
             "hash": "c0e582fdffca26cfcda8eac5427698ab6f36eb2f",
-            "created_at": "2023-10-06T23:10:37Z"
+            "created_at": "2023-10-06T23:10:37Z",
+            "build_time_s": 440.0,
+            "display_title": "Add option for building precompiled headers (#60)"
         },
         {
             "hash": "710b971874d38f8b382060fc3e06dffe649e5864",
-            "created_at": "2023-10-07T10:05:51Z"
+            "created_at": "2023-10-07T10:05:51Z",
+            "build_time_s": 502.0,
+            "display_title": "Bump clang-tidy to version 17 (#61)"
         },
         {
             "hash": "e2eb9aaa36f08bde9cad062f30ea523348ca2398",
-            "created_at": "2023-10-07T10:30:19Z"
+            "created_at": "2023-10-07T10:30:19Z",
+            "build_time_s": 434.0,
+            "display_title": "Upgrade to C++23 (#56)"
         },
         {
             "hash": "7e5fc181758bda0a42a67e70d4d9bf01ca5fa28c",
-            "created_at": "2023-10-10T19:45:38Z"
+            "created_at": "2023-10-10T19:45:38Z",
+            "build_time_s": 499.0,
+            "display_title": "Remove path exclusions for Build-and-Test workflow (#64)"
         },
         {
             "hash": "e85b4f03c509777a3eec461adf762be72a310740",
-            "created_at": "2023-10-11T23:18:43Z"
+            "created_at": "2023-10-11T23:18:43Z",
+            "build_time_s": 447.0,
+            "display_title": "Generate Vulkan wrapper structs (#49)"
         },
         {
             "hash": "dbaa8d8a77f15588cf49de48535e5037ee8c1094",
-            "created_at": "2023-10-11T23:29:42Z"
+            "created_at": "2023-10-11T23:29:42Z",
+            "build_time_s": 514.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#62)"
         },
         {
             "hash": "be4189d7c7cac41fa909a46af0231a1336e11b1e",
-            "created_at": "2023-10-20T21:12:22Z"
+            "created_at": "2023-10-20T21:12:22Z",
+            "build_time_s": 1810.0,
+            "display_title": "Add initializer_list constructor to vkex::Array (#67)"
         },
         {
             "hash": "438aec3d0b67b558d8bd0250fcb3a980feaaf26f",
-            "created_at": "2023-10-20T22:05:07Z"
+            "created_at": "2023-10-20T22:05:07Z",
+            "build_time_s": 466.0,
+            "display_title": "Add vulkan registry python scripts (#68)"
         },
         {
             "hash": "060a2da370a4e92a4d0c201105d221a7766c4ca6",
-            "created_at": "2023-10-21T00:41:25Z"
+            "created_at": "2023-10-21T00:41:25Z",
+            "build_time_s": 628.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#66)"
         },
         {
             "hash": "646756781c6db39e5f475763f8368b17e3ea8641",
-            "created_at": "2023-10-21T20:50:59Z"
+            "created_at": "2023-10-21T20:50:59Z",
+            "build_time_s": 485.0,
+            "display_title": "Add custom descriptor pool for view parameters (#53)"
         },
         {
             "hash": "7bcfaa00340d9efd7bdcceec85323b0c2cac3d61",
-            "created_at": "2023-10-28T11:18:09Z"
+            "created_at": "2023-10-28T11:18:09Z",
+            "build_time_s": 1472.0,
+            "display_title": "Add scheduled workflow to update actions (#73)"
         },
         {
             "hash": "9f1edc331f6c278550fa7e87141f77c4b94e1a6e",
-            "created_at": "2023-10-29T00:49:41Z"
+            "created_at": "2023-10-29T00:49:41Z",
+            "build_time_s": 1913.0,
+            "display_title": "Fix warnings in Github workflows (#72)"
         },
         {
             "hash": "0a3d9144536ae1a86d69b057a359759178c761bf",
-            "created_at": "2023-10-29T00:50:02Z"
+            "created_at": "2023-10-29T00:50:02Z",
+            "build_time_s": 1902.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#69)"
         },
         {
             "hash": "6c2e7d33bf0be51564aea09797462356094c201e",
-            "created_at": "2023-10-29T10:30:14Z"
+            "created_at": "2023-10-29T10:30:14Z",
+            "build_time_s": 434.0,
+            "display_title": "Silence warnings for missing StackWalker package (#74)"
         },
         {
             "hash": "0ab763b95db1b1414d8e4a499d7f1b90444ffef8",
-            "created_at": "2023-10-31T00:12:53Z"
+            "created_at": "2023-10-31T00:12:53Z",
+            "build_time_s": 471.0,
+            "display_title": "Add improved assert and break macros (#71)"
         },
         {
             "hash": "308b7e6a300cae9ecae962a133f8055b4ebd68ac",
-            "created_at": "2023-10-31T21:40:00Z"
+            "created_at": "2023-10-31T21:40:00Z",
+            "build_time_s": 509.0,
+            "display_title": "Split vcpkg manifest into multiple features (#75)"
         },
         {
             "hash": "e5f7ff4403b6e1d8155e1b902d9ea8dc2e1ac58a",
-            "created_at": "2023-11-01T18:25:20Z"
+            "created_at": "2023-11-01T18:25:20Z",
+            "build_time_s": 989.0,
+            "display_title": "Use correct token in Update-Actions workflow (#76)"
         },
         {
             "hash": "01ea3331b4f1a7a6057741951b0825fe64b6d568",
-            "created_at": "2023-11-02T00:19:40Z"
+            "created_at": "2023-11-02T00:19:40Z",
+            "build_time_s": 486.0,
+            "display_title": "Add action for caching OpenCppCoverage (#77)"
         },
         {
             "hash": "df18b06c25c1956e247864d68e627ab893aa50a6",
-            "created_at": "2023-11-02T00:57:51Z"
+            "created_at": "2023-11-02T00:57:51Z",
+            "build_time_s": 426.0,
+            "display_title": "Generate only the required build configuration for MSVC jobs (#78)"
         },
         {
             "hash": "59adb01c9b2c4f9b6c4609300aa43bdb8d6d43c4",
-            "created_at": "2023-11-02T20:40:40Z"
+            "created_at": "2023-11-02T20:40:40Z",
+            "build_time_s": 539.0,
+            "display_title": "Add profiling to CMake configure step (#79)"
         },
         {
             "hash": "7b565cfa68feac11fac5b802cc3d88655490dac6",
-            "created_at": "2023-11-02T22:53:26Z"
+            "created_at": "2023-11-02T22:53:26Z",
+            "build_time_s": 581.0,
+            "display_title": "Add a workflow to build packages (#80)"
         },
         {
             "hash": "cd5e96e5a114d7594b936a92f6dd88d2bc66f9ac",
-            "created_at": "2023-11-02T22:57:43Z"
+            "created_at": "2023-11-02T22:57:43Z",
+            "build_time_s": 548.0,
+            "display_title": "Fix naming of Build-Packages workflow (#81)"
         },
         {
             "hash": "b5875c34b6372ceb75cf306f4741fcbe6cc59f6c",
-            "created_at": "2023-11-02T23:04:08Z"
+            "created_at": "2023-11-02T23:04:08Z",
+            "build_time_s": 414.0,
+            "display_title": "Add a workflow_dispatch trigger to Build-Packages (#82)"
         },
         {
             "hash": "1e38b6fc643e067ad87a36cd792a4ac61de02763",
-            "created_at": "2023-11-03T21:54:08Z"
+            "created_at": "2023-11-03T21:54:08Z",
+            "build_time_s": 425.0,
+            "display_title": "Make coverage optional when manually running Build-and-Test (#83)"
         },
         {
             "hash": "b86adeb79f9a7a48ae92a23b13cde1f75a3b459c",
-            "created_at": "2023-11-03T23:43:20Z"
+            "created_at": "2023-11-03T23:43:20Z",
+            "build_time_s": 394.0,
+            "display_title": "Fix coverage being enabled when not requested (#84)"
         },
         {
             "hash": "1bc9f5fb89bf43e15287410981c48717bf67efb2",
-            "created_at": "2023-11-04T21:41:09Z"
+            "created_at": "2023-11-04T21:41:09Z",
+            "build_time_s": 348.0,
+            "display_title": "Cache exported packages (#85)"
         },
         {
             "hash": "ef0dd54091c00229382b02ce35e8138bdb0f4fec",
-            "created_at": "2023-11-05T01:06:21Z"
+            "created_at": "2023-11-05T01:06:21Z",
+            "build_time_s": 485.0,
+            "display_title": "Unify Windows and Linux jobs (#86)"
         },
         {
             "hash": "747d1ea848ef65cc2ea5a1b2dcd9e19ec340b8e2",
-            "created_at": "2023-11-05T01:32:46Z"
+            "created_at": "2023-11-05T01:32:46Z",
+            "build_time_s": 474.0,
+            "display_title": "Fix Update-Actions (#87)"
         },
         {
             "hash": "78bab714d6ca2254f170ddbe110f341b844275f5",
-            "created_at": "2023-11-05T14:56:26Z"
+            "created_at": "2023-11-05T14:56:26Z",
+            "build_time_s": 486.0,
+            "display_title": "Fix output directory of exported packages (#89)"
         },
         {
             "hash": "8c4e571a667350998892d37566b5cbbb624a224e",
-            "created_at": "2023-11-05T19:33:44Z"
+            "created_at": "2023-11-05T19:33:44Z",
+            "build_time_s": 391.0,
+            "display_title": "Dump CMake output logs (#90)"
         },
         {
             "hash": "7d8d4c8083cc85fe19fb2073bd59e1814f8f2c73",
-            "created_at": "2023-11-06T22:18:43Z"
+            "created_at": "2023-11-06T22:18:43Z",
+            "build_time_s": 454.0,
+            "display_title": "Add problem matchers for compile errors (#92)"
         },
         {
             "hash": "c86154e56f9ff42d4d9134fb3e29d3fce207f1f4",
-            "created_at": "2023-11-06T22:19:01Z"
+            "created_at": "2023-11-06T22:19:01Z",
+            "build_time_s": 405.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#91)"
         },
         {
             "hash": "390d5108a80bda9fd012f5649070de2e8352c6c3",
-            "created_at": "2023-11-08T19:11:00Z"
+            "created_at": "2023-11-08T19:11:00Z",
+            "build_time_s": 471.0,
+            "display_title": "Add prebuilt packages for UBSAN (#93)"
         },
         {
             "hash": "b87c7b6394b329a5bdfe85e5827fc09a5481265c",
-            "created_at": "2023-11-08T22:20:55Z"
+            "created_at": "2023-11-08T22:20:55Z",
+            "build_time_s": 409.0,
+            "display_title": "Move problem matchers to install-dependencies action (#94)"
         },
         {
             "hash": "7f146f9b9f5406ed7865547c69278f2235a54084",
-            "created_at": "2023-11-09T18:32:36Z"
+            "created_at": "2023-11-09T18:32:36Z",
+            "build_time_s": 821.0,
+            "display_title": "Use CMake script to determine triplet (#95)"
         },
         {
             "hash": "49ecc6cca83c095662277d4452ccbdbc6e17c4bb",
-            "created_at": "2023-11-09T18:58:06Z"
+            "created_at": "2023-11-09T18:58:06Z",
+            "build_time_s": 502.0,
+            "display_title": "Fix workflow set env syntax (#96)"
         },
         {
             "hash": "49566c5e39d44db7f9c5e6ad15dca14ccff87fbf",
-            "created_at": "2023-11-09T19:22:21Z"
+            "created_at": "2023-11-09T19:22:21Z",
+            "build_time_s": 407.0,
+            "display_title": "Redirect stderr to stdout in workflow command (#97)"
         },
         {
             "hash": "0bfd76c214a55cdbf484ed06bd220f4e61acb673",
-            "created_at": "2023-11-09T22:32:57Z"
+            "created_at": "2023-11-09T22:32:57Z",
+            "build_time_s": 1926.0,
+            "display_title": "Use correct triplet when building packages (#98)"
         },
         {
             "hash": "e6ef5caa493ab845ae49f7d1cf248ccc4760a0aa",
-            "created_at": "2023-11-10T02:14:24Z"
+            "created_at": "2023-11-10T02:14:24Z",
+            "build_time_s": 418.0,
+            "display_title": "Use prebuilt packages (#88)"
         },
         {
             "hash": "ae58a256025925348f2bcd0c60b32e2a54aff3ff",
-            "created_at": "2023-11-10T23:29:05Z"
+            "created_at": "2023-11-10T23:29:05Z",
+            "build_time_s": 455.0,
+            "display_title": "Split vcpkg configuration into separate file (#99)"
         },
         {
             "hash": "0a83ccdd801baf52eb78867a3437f3ba1d3de0bd",
-            "created_at": "2023-11-16T18:58:54Z"
+            "created_at": "2023-11-16T18:58:54Z",
+            "build_time_s": 292.0,
+            "display_title": "Add llvm as a non-transitive dependency to reduce build size"
         },
         {
             "hash": "dd5b3111bcbae9f64f8fa0e6df3997175c306db3",
-            "created_at": "2023-11-17T23:24:11Z"
+            "created_at": "2023-11-17T23:24:11Z",
+            "build_time_s": 349.0,
+            "display_title": "Revert \"Revert \"Add llvm as a non-transitive dependency to reduce bui\u2026"
         },
         {
             "hash": "8533c7931baa3ceefa71ac86cc587e76105e33e3",
-            "created_at": "2023-11-21T19:17:59Z"
+            "created_at": "2023-11-21T19:17:59Z",
+            "build_time_s": 460.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#105)"
         },
         {
             "hash": "cec68db339067e6e095b37bd0d24492400c53504",
-            "created_at": "2023-11-29T22:29:03Z"
+            "created_at": "2023-11-29T22:29:03Z",
+            "build_time_s": 350.0,
+            "display_title": "Allow updating render test references from CI (#106)"
         },
         {
             "hash": "c9e04aa77dd730f82d82f2c6731ff591cd7935b0",
-            "created_at": "2023-11-29T22:54:05Z"
+            "created_at": "2023-11-29T22:54:05Z",
+            "build_time_s": 376.0,
+            "display_title": "Fix render test falsely reporting failure (#107)"
         },
         {
             "hash": "a41fc11bb2c7b20a06ee6d662751dd1af693e720",
-            "created_at": "2023-11-30T00:59:51Z"
+            "created_at": "2023-11-30T00:59:51Z",
+            "build_time_s": 356.0,
+            "display_title": "Move update references to separate workflow (#108)"
         },
         {
             "hash": "33d86b67adde2a32a241dcc2109b19510ebb59e6",
-            "created_at": "2023-12-02T01:33:52Z"
+            "created_at": "2023-12-02T01:33:52Z",
+            "build_time_s": 474.0,
+            "display_title": "Add CMake formatters for FetchContent_Declare and execute_process (#110)"
         },
         {
             "hash": "e140af3043d529c2c38c32c044e877b1d64fa46b",
-            "created_at": "2023-12-02T02:13:25Z"
+            "created_at": "2023-12-02T02:13:25Z",
+            "build_time_s": 293.0,
+            "display_title": "Use prebuilt packages in static analysis workflow (#111)"
         },
         {
             "hash": "545390ae1148b3939877a9a5cd7e163cdad47978",
-            "created_at": "2023-12-02T03:45:41Z"
+            "created_at": "2023-12-02T03:45:41Z",
+            "build_time_s": 364.0,
+            "display_title": "Add descriptor pool for scene parameters (#70)"
         },
         {
             "hash": "7c0982a8e17b7d7a6d92e484ad539a1a75b696aa",
-            "created_at": "2023-12-02T20:12:42Z"
+            "created_at": "2023-12-02T20:12:42Z",
+            "build_time_s": 313.0,
+            "display_title": "Fix console pop-up for gen_filelists.py on Windows (#112)"
         },
         {
             "hash": "3a5533e7a46c85d8de6ff7ef60bbc509628bfa37",
-            "created_at": "2023-12-04T00:41:35Z"
+            "created_at": "2023-12-04T00:41:35Z",
+            "build_time_s": 326.0,
+            "display_title": "Add names to all threads (#113)"
         },
         {
             "hash": "e517aea5fcc5689a9f58a2dd751c9df358d0f5c2",
-            "created_at": "2023-12-06T21:33:43Z"
+            "created_at": "2023-12-06T21:33:43Z",
+            "build_time_s": 348.0,
+            "display_title": "Add ShaderCompiler class to manage lifetime of GLSLang (#115)"
         },
         {
             "hash": "110101578ca6200d9fcad5cec23cb1ee791b1210",
-            "created_at": "2023-12-06T21:42:55Z"
+            "created_at": "2023-12-06T21:42:55Z",
+            "build_time_s": 321.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#114)"
         },
         {
             "hash": "bc7095f6254508f992bef7bec56b565378036b47",
-            "created_at": "2023-12-13T03:10:22Z"
+            "created_at": "2023-12-13T03:10:22Z",
+            "build_time_s": 316.0,
+            "display_title": "Fix build for Termux (#118)"
         },
         {
             "hash": "3435906ba949c48fdb559637fa8c7990bd187821",
-            "created_at": "2023-12-29T20:13:08Z"
+            "created_at": "2023-12-29T20:13:08Z",
+            "build_time_s": 380.0,
+            "display_title": "Add -Wextra -Wpedantic to Linux compile flags (#119)"
         },
         {
             "hash": "2b2cd0582a7bbc71a252f582bea7e49ac34c57ab",
-            "created_at": "2024-07-11T22:40:13Z"
+            "created_at": "2024-07-11T22:40:13Z",
+            "build_time_s": 446.0,
+            "display_title": "Disable lfs for Update-Actions workflow (#142)"
         },
         {
             "hash": "dc8e6ad8c4cda796b82c241ceabbfc6f9ae37d07",
-            "created_at": "2024-07-11T23:07:17Z"
+            "created_at": "2024-07-11T23:07:17Z",
+            "build_time_s": 356.0,
+            "display_title": "Remove worker index from scheduler code (#144)"
         },
         {
             "hash": "f35f2ac90f146865ebaf48e0f476732386649fb7",
-            "created_at": "2024-07-13T14:06:22Z"
+            "created_at": "2024-07-13T14:06:22Z",
+            "build_time_s": 344.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#141)"
         },
         {
             "hash": "2ad0172dc1a0ee09a84a77b2398e18eadac466a4",
-            "created_at": "2024-07-14T17:21:28Z"
+            "created_at": "2024-07-14T17:21:28Z",
+            "build_time_s": 334.0,
+            "display_title": "Update GitHub Action Versions (#145)"
         },
         {
             "hash": "7fd43c5868e75d7bddafe410a275118934da371f",
-            "created_at": "2024-07-15T22:11:21Z"
+            "created_at": "2024-07-15T22:11:21Z",
+            "build_time_s": 333.0,
+            "display_title": "Remove depth/stencil resolve feature (#146)"
         },
         {
             "hash": "43a255b51acb445fae7d5a88a57cd42b8d95721a",
-            "created_at": "2024-07-20T22:45:17Z"
+            "created_at": "2024-07-20T22:45:17Z",
+            "build_time_s": 330.0,
+            "display_title": "Enable features required for bindless rendering (#148)"
         },
         {
             "hash": "93854392ad06d88766b85b8fa0569fcd2bd636bd",
-            "created_at": "2024-07-31T22:13:54Z"
+            "created_at": "2024-07-31T22:13:54Z",
+            "build_time_s": 341.0,
+            "display_title": "Update GitHub Action Versions (#149)"
         },
         {
             "hash": "8c32a70ef7d23e2f2e8c605925bea182ab58c32b",
-            "created_at": "2024-08-07T21:13:13Z"
+            "created_at": "2024-08-07T21:13:13Z",
+            "build_time_s": 338.0,
+            "display_title": "Disable compiler tracking for all vcpkg triplets (#152)"
         },
         {
             "hash": "b544447876c8f40c85277e880ea6d055b3101c33",
-            "created_at": "2024-08-08T01:04:26Z"
+            "created_at": "2024-08-08T01:04:26Z",
+            "build_time_s": 371.0,
+            "display_title": "Update GitHub Action Versions (#151)"
         },
         {
             "hash": "fd9a003cab227b23a1dd9e8f941f30073cb99317",
-            "created_at": "2024-08-12T22:33:52Z"
+            "created_at": "2024-08-12T22:33:52Z",
+            "build_time_s": 350.0,
+            "display_title": "Update GitHub Action Versions (#154)"
         },
         {
             "hash": "ec6a9a4a4638e735cedee91a13d0c011fa2be536",
-            "created_at": "2024-08-13T00:39:46Z"
+            "created_at": "2024-08-13T00:39:46Z",
+            "build_time_s": 60237.0,
+            "display_title": "Optimise package installation (#153)"
         },
         {
             "hash": "c9e24e2043501fffe2c2fe9e4f2acd5a7ee7a29e",
-            "created_at": "2024-08-13T17:45:22Z"
+            "created_at": "2024-08-13T17:45:22Z",
+            "build_time_s": 469.0,
+            "display_title": "Run Update-Actions workflow every month instead of every week (#155)"
         },
         {
             "hash": "69d79ad9069b5fca608ea8af7d7a9ebe57eecd4b",
-            "created_at": "2024-08-13T18:39:15Z"
+            "created_at": "2024-08-13T18:39:15Z",
+            "build_time_s": 422.0,
+            "display_title": "Fix allocation of zero-sized array (#156)"
         },
         {
             "hash": "82816e81a925751c379b7fc9dd18bcdac37f9535",
-            "created_at": "2024-08-13T22:36:25Z"
+            "created_at": "2024-08-13T22:36:25Z",
+            "build_time_s": 582.0,
+            "display_title": "Remove free disk space step from Build-Packages workflow (#157)"
         },
         {
             "hash": "9b2080d795ec554b006a4cb9f1f9be937bc94ab5",
-            "created_at": "2024-08-17T21:16:54Z"
+            "created_at": "2024-08-17T21:16:54Z",
+            "build_time_s": 532.0,
+            "display_title": "Fix omissions in build packages workflow (#159)"
         },
         {
             "hash": "587361e258da0423c48963141decfc05cf35b5bd",
-            "created_at": "2024-08-30T21:38:35Z"
+            "created_at": "2024-08-30T21:38:35Z",
+            "build_time_s": 503.0,
+            "display_title": "Add render graph data structure (#147)"
         },
         {
             "hash": "982f59e31702076a75f28253c9cf2a5d6100c6c8",
-            "created_at": "2024-09-22T20:50:11Z"
+            "created_at": "2024-09-22T20:50:11Z",
+            "build_time_s": 547.0,
+            "display_title": "Update GitHub Action Versions (#160)"
         },
         {
             "hash": "572b24461c1d77b8e8bb3d0253d21016f0e8b0f0",
-            "created_at": "2024-10-07T18:42:49Z"
+            "created_at": "2024-10-07T18:42:49Z",
+            "build_time_s": 518.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#161)"
         },
         {
             "hash": "3145a758145e109bf90fc79154b215a948ee076a",
-            "created_at": "2024-10-07T18:43:18Z"
+            "created_at": "2024-10-07T18:43:18Z",
+            "build_time_s": 416.0,
+            "display_title": "Update GitHub Action Versions (#162)"
         },
         {
             "hash": "0355d248f03451013d7a9e1d0c2df6c6a3851208",
-            "created_at": "2024-10-26T22:34:09Z"
+            "created_at": "2024-10-26T22:34:09Z",
+            "build_time_s": 425.0,
+            "display_title": "Fix test output (#168)"
         },
         {
             "hash": "416ae13681b7c11e9cb69081de0a931372d098bf",
-            "created_at": "2024-10-27T13:38:22Z"
+            "created_at": "2024-10-27T13:38:22Z",
+            "build_time_s": 375.0,
+            "display_title": "Split up CreateTextureImpl function (#169)"
         },
         {
             "hash": "6478a70b1207572de07b2223f979983babb70a02",
-            "created_at": "2024-10-27T16:53:50Z"
+            "created_at": "2024-10-27T16:53:50Z",
+            "build_time_s": 374.0,
+            "display_title": "Add support for kernels in shader compiler (#171)"
         },
         {
             "hash": "95280eb998e0bc53c047c0e7412f72b98d4eff53",
-            "created_at": "2024-10-27T17:16:00Z"
+            "created_at": "2024-10-27T17:16:00Z",
+            "build_time_s": 407.0,
+            "display_title": "Allow handles for types without properties (#172)"
         },
         {
             "hash": "3560dc8e697554c642e99546ee8acbdc89939479",
-            "created_at": "2024-10-28T00:28:42Z"
+            "created_at": "2024-10-28T00:28:42Z",
+            "build_time_s": 395.0,
+            "display_title": "Add handle type for parameter block (#173)"
         },
         {
             "hash": "1de8506edb1c127b8bf11bd6c77d0192b9d20c1f",
-            "created_at": "2024-11-04T00:41:16Z"
+            "created_at": "2024-11-04T00:41:16Z",
+            "build_time_s": 350.0,
+            "display_title": "Generate compile_commands.json by default for linux builds (#175)"
         },
         {
             "hash": "9c6824748cb2455a1514ec625dc89fca9fec245b",
-            "created_at": "2024-11-04T00:46:50Z"
+            "created_at": "2024-11-04T00:46:50Z",
+            "build_time_s": 376.0,
+            "display_title": "Add a client/server model to gen_filelists (#176)"
         },
         {
             "hash": "4e134db556b073e567c4e10c924b2bf577389654",
-            "created_at": "2024-11-04T00:48:12Z"
+            "created_at": "2024-11-04T00:48:12Z",
+            "build_time_s": 479.0,
+            "display_title": "Update GitHub Action Versions (#174)"
         },
         {
             "hash": "922ed616994afb2d88832ae464281da49e3f2755",
-            "created_at": "2024-11-07T22:41:39Z"
+            "created_at": "2024-11-07T22:41:39Z",
+            "build_time_s": 385.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#177)"
         },
         {
             "hash": "47e8e54b2696159ddbf7ddf84558fb8bb110580f",
-            "created_at": "2024-11-07T23:50:20Z"
+            "created_at": "2024-11-07T23:50:20Z",
+            "build_time_s": 408.0,
+            "display_title": "Add compile_commands.json and clangd cache to gitignore (#178)"
         },
         {
             "hash": "d4adbe6cbec90fd1693b421ab7b0f0c6606ff3f1",
-            "created_at": "2024-11-08T00:16:54Z"
+            "created_at": "2024-11-08T00:16:54Z",
+            "build_time_s": 381.0,
+            "display_title": "Fix imports in Python scripts (#179)"
         },
         {
             "hash": "374bd2173bb9351d2c66fe5b8864eecf15c64722",
-            "created_at": "2024-11-26T00:29:21Z"
+            "created_at": "2024-11-26T00:29:21Z",
+            "build_time_s": 352.0,
+            "display_title": "Fix static analysis workflow applying fixes twice (#182)"
         },
         {
             "hash": "8a2f7d86cfdfc9468a757bd263709b95f68ce2c8",
-            "created_at": "2024-11-26T00:29:30Z"
+            "created_at": "2024-11-26T00:29:30Z",
+            "build_time_s": 503.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#183)"
         },
         {
             "hash": "6f2426005efe4dcb381c59793abd6723a486eb1b",
-            "created_at": "2024-11-26T01:03:32Z"
+            "created_at": "2024-11-26T01:03:32Z",
+            "build_time_s": 368.0,
+            "display_title": "Put Cppcheck args in config file (#184)"
         },
         {
             "hash": "2dcbd7787d2126d1f26d926b319729c1e3fef03c",
-            "created_at": "2024-12-05T21:17:20Z"
+            "created_at": "2024-12-05T21:17:20Z",
+            "build_time_s": 352.0,
+            "display_title": "Update GitHub Action Versions (#186)"
         },
         {
             "hash": "0448bd96fb144d0a7e05b40f4ad1c32b6007c0c7",
-            "created_at": "2025-09-09T00:59:41Z"
+            "created_at": "2025-09-09T00:59:41Z",
+            "build_time_s": 510.0,
+            "display_title": "Fix breaking changes from compiler updates (#193)"
         },
         {
             "hash": "ebb7655f7475f604910382ae1d404423a60c24cb",
-            "created_at": "2025-09-09T01:17:46Z"
+            "created_at": "2025-09-09T01:17:46Z",
+            "build_time_s": 401.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#187)"
         },
         {
             "hash": "7fc3f2394ab4d258ba20b60633b61d0b3ed70180",
-            "created_at": "2025-09-11T23:26:06Z"
+            "created_at": "2025-09-11T23:26:06Z",
+            "build_time_s": 352.0,
+            "display_title": "Add option for verbose test logs in CI (#192)"
         },
         {
             "hash": "bc419ecf7c5eddc316107f3635de14b84197d8db",
-            "created_at": "2025-09-12T01:15:39Z"
+            "created_at": "2025-09-12T01:15:39Z",
+            "build_time_s": 1709.0,
+            "display_title": "Update vcpkg baseline (#191)"
         },
         {
             "hash": "f072cf8c6eeff12effc6b0e8391b4d4e14305eaf",
-            "created_at": "2025-09-12T21:46:53Z"
+            "created_at": "2025-09-12T21:46:53Z",
+            "build_time_s": 554.0,
+            "display_title": "Remove run-vcpkg step from Build-Packages workflow (#197)"
         },
         {
             "hash": "7614bb6aaf6fa1dbc7966687cc77ea96709e7a90",
-            "created_at": "2025-09-12T22:01:43Z"
+            "created_at": "2025-09-12T22:01:43Z",
+            "build_time_s": 311.0,
+            "display_title": "Remove Build-Packages dependency from Build-and-Test (#195)"
         },
         {
             "hash": "fbd92feb4f2b4c209c967c772d2a83110acafc11",
-            "created_at": "2025-09-12T22:05:52Z"
+            "created_at": "2025-09-12T22:05:52Z",
+            "build_time_s": 344.0,
+            "display_title": "Remove obsolete key from coverage report uploader"
         },
         {
             "hash": "5df5497490e1488a2aa425989749a7547e4d0ae7",
-            "created_at": "2025-09-13T07:18:11Z"
+            "created_at": "2025-09-13T07:18:11Z",
+            "build_time_s": 289.0,
+            "display_title": "Detect if ccache is in the chocolatey install directory"
         },
         {
             "hash": "305450d4bd786d801ed56d2cb7d25076ca784411",
-            "created_at": "2025-09-13T07:19:47Z"
+            "created_at": "2025-09-13T07:19:47Z",
+            "build_time_s": 318.0,
+            "display_title": "Add ccache support (#198)"
         },
         {
             "hash": "289327732ada948726f273d2cf72e9f953bdb177",
-            "created_at": "2025-09-14T19:18:48Z"
+            "created_at": "2025-09-14T19:18:48Z",
+            "build_time_s": 373.0,
+            "display_title": "Enable ccache for Build-and-Test workflow (#194)"
         },
         {
             "hash": "ab66da584dca3c76044c723a12f0726ad720e3dd",
-            "created_at": "2025-09-18T07:52:54Z"
+            "created_at": "2025-09-18T07:52:54Z",
+            "build_time_s": 352.0,
+            "display_title": "Add CodeCov token for coverage report uploading (#200)"
         },
         {
             "hash": "c143c3c3faabad43f9171b2ff3086f08faa94ea4",
-            "created_at": "2025-09-19T01:52:08Z"
+            "created_at": "2025-09-19T01:52:08Z",
+            "build_time_s": 1820.0,
+            "display_title": "Optimise GitHub Actions workflows (#199)"
         },
         {
             "hash": "4a0363bfdd438e95a211dd12ebf414617177a781",
-            "created_at": "2025-09-19T20:51:12Z"
+            "created_at": "2025-09-19T20:51:12Z",
+            "build_time_s": 458.0,
+            "display_title": "Use ccache on main branch in addition to PRs (#203)"
         },
         {
             "hash": "a4657b1245ad1ead165582d04feb84bc5fd5f76b",
-            "created_at": "2025-09-24T06:41:54Z"
+            "created_at": "2025-09-24T06:41:54Z",
+            "build_time_s": 149.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#204)"
         },
         {
             "hash": "810b9cafb0035d292ba93e94480c5a73f205dedf",
-            "created_at": "2025-10-02T03:01:28Z"
+            "created_at": "2025-10-02T03:01:28Z",
+            "build_time_s": 182.0,
+            "display_title": "Fail Static-Analysis workflow if packages can't be restored from cach\u2026"
         },
         {
             "hash": "446c8fa8dc573cca80d4a5cc2a60c01b92c97160",
-            "created_at": "2025-10-02T03:11:45Z"
+            "created_at": "2025-10-02T03:11:45Z",
+            "build_time_s": 527.0,
+            "display_title": "Switch to humbletim's setup-vulkan repo (#214)"
         },
         {
             "hash": "494e71bf62ef4bf541b90efdd4ed219b15f4c303",
-            "created_at": "2025-10-02T03:22:06Z"
+            "created_at": "2025-10-02T03:22:06Z",
+            "build_time_s": 195.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#206)"
         },
         {
             "hash": "1868fe4fc3ac9ecbfea43a780137318b61e33a9e",
-            "created_at": "2025-10-02T22:57:23Z"
+            "created_at": "2025-10-02T22:57:23Z",
+            "build_time_s": 305.0,
+            "display_title": "Enable Vulkan validation layers on CI (#205)"
         },
         {
             "hash": "431398e995d8aa9961d9507fa8f02d7216d05ea7",
-            "created_at": "2025-10-03T01:04:56Z"
+            "created_at": "2025-10-03T01:04:56Z",
+            "build_time_s": 1815.0,
+            "display_title": "Integrate stacktraces into TeideTest via cpptrace library (#215)"
         },
         {
             "hash": "030479866161b17eb2cd344314419c7efa383b42",
-            "created_at": "2025-10-11T13:26:48Z"
+            "created_at": "2025-10-11T13:26:48Z",
+            "build_time_s": 374.0,
+            "display_title": "Enable SARIF output for Cppcheck (#216)"
         },
         {
             "hash": "5f6f82e3de279c24fbf56b97ad189544eb82e886",
-            "created_at": "2025-10-15T00:53:07Z"
+            "created_at": "2025-10-15T00:53:07Z",
+            "build_time_s": 147.0,
+            "display_title": "Add CodeQL scanning to CI (#217)"
         },
         {
             "hash": "669f57fd8e8ea95e6c6de9845f33db63c3411eb5",
-            "created_at": "2025-10-16T17:17:46Z"
+            "created_at": "2025-10-16T17:17:46Z",
+            "build_time_s": 389.0,
+            "display_title": "Use sarif format for Cppcheck on CI (#218)"
         },
         {
             "hash": "11e7b203d51af9dc1bf0f6d432cd60d3e948b15b",
-            "created_at": "2025-10-16T18:01:03Z"
+            "created_at": "2025-10-16T18:01:03Z",
+            "build_time_s": 199.0,
+            "display_title": "Enable CodeQL only on weekly schedule (#219)"
         },
         {
             "hash": "2bffa5dff996310502757759940328836aeebe5e",
-            "created_at": "2025-10-19T16:53:05Z"
+            "created_at": "2025-10-19T16:53:05Z",
+            "build_time_s": 333.0,
+            "display_title": "Set clang-format BreakBinaryOperations setting to OnePerLine (#221)"
         },
         {
             "hash": "d5dab88424850e39102bdcbc0f2ad5e37287b1fa",
-            "created_at": "2025-10-21T07:52:11Z"
+            "created_at": "2025-10-21T07:52:11Z",
+            "build_time_s": 1895.0,
+            "display_title": "Disable default features of SDL2 (#223)"
         },
         {
             "hash": "328dc666320f70f0a39f9e2620f3b1c570258904",
-            "created_at": "2025-10-21T10:59:30Z"
+            "created_at": "2025-10-21T10:59:30Z",
+            "build_time_s": 1963.0,
+            "display_title": "Bump vcpkg baseline (#222)"
         },
         {
             "hash": "75b1ca9159ee053655d80d032b1955a3f3a0b429",
-            "created_at": "2025-10-21T17:14:04Z"
+            "created_at": "2025-10-21T17:14:04Z",
+            "build_time_s": 588.0,
+            "display_title": "Synchronize the GpuExecutor in the Scheduler (#224)"
         },
         {
             "hash": "773bc814fdfd78ec4272d88ed02d0a7ea2604ab3",
-            "created_at": "2025-10-21T17:30:36Z"
+            "created_at": "2025-10-21T17:30:36Z",
+            "build_time_s": 413.0,
+            "display_title": "Separate command buffer ordering logic from submission (#225)"
         },
         {
             "hash": "6eef47ccc076d9e87f239e52da6536e2bd3762f7",
-            "created_at": "2025-10-21T19:42:54Z"
+            "created_at": "2025-10-21T19:42:54Z",
+            "build_time_s": 438.0,
+            "display_title": "Move ordering logic from Queue to GpuExecutor (#226)"
         },
         {
             "hash": "1061359be7f01e462396e97b78d996f2d456d96d",
-            "created_at": "2025-10-21T20:04:18Z"
+            "created_at": "2025-10-21T20:04:18Z",
+            "build_time_s": 383.0,
+            "display_title": "Internally synchronise members of Queue rather than the object itself\u2026"
         },
         {
             "hash": "19b6cbd30c03dbd162e3603a293a713b9c920dad",
-            "created_at": "2025-10-22T06:53:55Z"
+            "created_at": "2025-10-22T06:53:55Z",
+            "build_time_s": 352.0,
+            "display_title": "Use jthread and stop_token for background thread (#228)"
         },
         {
             "hash": "2f4200b599e31dcc6b4f0448ab2b026a91e38b67",
-            "created_at": "2025-10-22T15:38:58Z"
+            "created_at": "2025-10-22T15:38:58Z",
+            "build_time_s": 1941.0,
+            "display_title": "Move background thread from GpuExecutor to Queue (#229)"
         },
         {
             "hash": "4f2e9e56779b0e076bfd1eb67ad2dce725b1500d",
-            "created_at": "2025-10-22T23:45:10Z"
+            "created_at": "2025-10-22T23:45:10Z",
+            "build_time_s": 411.0,
+            "display_title": "Move Queue class into its own file (#220)"
         },
         {
             "hash": "e08ed5230b7c007c87556ae23e5ba5df56791a3a",
-            "created_at": "2025-10-23T12:25:41Z"
+            "created_at": "2025-10-23T12:25:41Z",
+            "build_time_s": 338.0,
+            "display_title": "Separate Queue class from GpuExecutor (#220)"
         },
         {
             "hash": "0acab7fc62c96d901efa78300af4a12c59ab2e56",
-            "created_at": "2025-10-28T13:19:16Z"
+            "created_at": "2025-10-28T13:19:16Z",
+            "build_time_s": 354.0,
+            "display_title": "Add LazySubmit function to Queue that returns a sender (#230)"
         },
         {
             "hash": "02618010d27c762ab9e9af15b8b536c9d0fb2254",
-            "created_at": "2025-11-16T00:10:11Z"
+            "created_at": "2025-11-16T00:10:11Z",
+            "build_time_s": 538.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#232)"
         },
         {
             "hash": "eadf36f8a510d7748135d9a7c089e8ff04d5eb33",
-            "created_at": "2025-11-16T02:22:10Z"
+            "created_at": "2025-11-16T02:22:10Z",
+            "build_time_s": 450.0,
+            "display_title": "Automatically gitignore build directories (#231)"
         },
         {
             "hash": "68b98e0791e52768a4a000905614f8ee28d1318d",
-            "created_at": "2025-12-01T16:22:00Z"
+            "created_at": "2025-12-01T16:22:00Z",
+            "build_time_s": 548.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#233)"
         },
         {
             "hash": "e90c7dd587728149750010026817f85f4fb80e43",
-            "created_at": "2025-12-03T03:12:02Z"
+            "created_at": "2025-12-03T03:12:02Z",
+            "build_time_s": 219.0,
+            "display_title": "Update actions updater (#234)"
         },
         {
             "hash": "ea63bca46b229b1ce6fa1b5212aabdb72c45bb5d",
-            "created_at": "2025-12-03T03:26:46Z"
+            "created_at": "2025-12-03T03:26:46Z",
+            "build_time_s": 194.0,
+            "display_title": "Update GitHub Action Versions (#235)"
         },
         {
             "hash": "fec6054cf4910f29abe8b4df9fb399d3978dde18",
-            "created_at": "2025-12-03T03:39:32Z"
+            "created_at": "2025-12-03T03:39:32Z",
+            "build_time_s": 144.0,
+            "display_title": "Add dependabot configuration to keep actions up to date (#236)"
         },
         {
             "hash": "262f4fd432f9c9f254689b7cc61dd0801f0f479c",
-            "created_at": "2025-12-05T22:20:17Z"
+            "created_at": "2025-12-05T22:20:17Z",
+            "build_time_s": 307.0,
+            "display_title": "Fix OpenCppCoverage not reporting any lines (#237)"
         },
         {
             "hash": "444b13c4f84264367b1ff7812ef96ce6b4c29e4d",
-            "created_at": "2025-12-27T22:08:36Z"
+            "created_at": "2025-12-27T22:08:36Z",
+            "build_time_s": 62820.0,
+            "display_title": "Bump the github-actions group with 5 updates (#249)"
         },
         {
             "hash": "573fdf78b2a5a6a45eb1530b433e42012a0dc2d2",
-            "created_at": "2025-12-29T02:54:06Z"
+            "created_at": "2025-12-29T02:54:06Z",
+            "build_time_s": 1928.0,
+            "display_title": "Bump github.com/microsoft/vcpkg from master to 2025.12.12 in the vcpk\u2026"
         },
         {
             "hash": "78040f63f7342d9c991e9bc464b69ce864d2bcc6",
-            "created_at": "2025-12-29T21:41:54Z"
+            "created_at": "2025-12-29T21:41:54Z",
+            "build_time_s": 569.0,
+            "display_title": "Add comments to generated vkex members (#250)"
         },
         {
             "hash": "53011f3c29e747a84788040c9f5b260356b028b2",
-            "created_at": "2025-12-30T03:01:34Z"
+            "created_at": "2025-12-30T03:01:34Z",
+            "build_time_s": 357.0,
+            "display_title": "Graph render nodes (#240)"
         },
         {
             "hash": "5fc6a100b5a5c62ebe3b9d9c0c8d66f1cb23ab21",
-            "created_at": "2025-12-31T20:29:19Z"
+            "created_at": "2025-12-31T20:29:19Z",
+            "build_time_s": 386.0,
+            "display_title": "Make spdlog dependency private (#251)"
         },
         {
             "hash": "5db269914f7a57b566929626b12517ca188eb231",
-            "created_at": "2026-01-01T21:57:44Z"
+            "created_at": "2026-01-01T21:57:44Z",
+            "build_time_s": 556.0,
+            "display_title": "Remove compiler-specific presets and refactor Build-and-Test matrix (\u2026"
         },
         {
             "hash": "df31f7be69bc50afd491e98f665c2ec280b2e3f8",
-            "created_at": "2026-01-02T23:44:36Z"
+            "created_at": "2026-01-02T23:44:36Z",
+            "build_time_s": 317.0,
+            "display_title": "Fix incorrect preset names in Build-Packages workflow (#253)"
         },
         {
             "hash": "b9b67a7f333043e7f59cace00808ed53cb4e0cbb",
-            "created_at": "2026-01-03T03:46:02Z"
+            "created_at": "2026-01-03T03:46:02Z",
+            "build_time_s": 327.0,
+            "display_title": "Improve Build-Packages workflow (#254)"
         },
         {
             "hash": "718aa3405745050e7a630e26f7fad168bdcb36e7",
-            "created_at": "2026-01-08T22:38:20Z"
+            "created_at": "2026-01-08T22:38:20Z",
+            "build_time_s": 347.0,
+            "display_title": "Bump github.com/microsoft/vcpkg from master to 2025.12.12 in the vcpk\u2026"
         },
         {
             "hash": "0e319752815dcd4f06759f12f75851630d6525e5",
-            "created_at": "2026-02-01T19:03:02Z"
+            "created_at": "2026-02-01T19:03:02Z",
+            "build_time_s": 369.0,
+            "display_title": "Bump the github-actions group across 1 directory with 3 updates (#261)"
         },
         {
             "hash": "c6eea84bb8a60a157b22f43ce82b1fe69873be8b",
-            "created_at": "2026-02-14T14:19:40Z"
+            "created_at": "2026-02-14T14:19:40Z",
+            "build_time_s": 550.0,
+            "display_title": "Modernize assert macro with std::source_location (#264)"
         },
         {
             "hash": "4a1d0c312ec143cbdb10ec8fa792c92375b42a81",
-            "created_at": "2026-02-14T16:11:01Z"
+            "created_at": "2026-02-14T16:11:01Z",
+            "build_time_s": 307.0,
+            "display_title": "Bump the github-actions group with 2 updates (#263)"
         },
         {
             "hash": "d59b7787cc84755dacc30e5635002e69b346ab01",
-            "created_at": "2026-02-16T03:21:18Z"
+            "created_at": "2026-02-16T03:21:18Z",
+            "build_time_s": 1042.0,
+            "display_title": "Bump github.com/microsoft/vcpkg from master to 2026.01.16 in the vcpk\u2026"
         },
         {
             "hash": "6a90b1d1882d8798c6382af4df6f8abc20e6f63d",
-            "created_at": "2026-02-16T03:41:12Z"
+            "created_at": "2026-02-16T03:41:12Z",
+            "build_time_s": 2330.0,
+            "display_title": "Add present node to graph (#269)"
         },
         {
             "hash": "3ce00291150d909c0b68cec2c692cf06cff5c487",
-            "created_at": "2026-02-20T22:07:13Z"
+            "created_at": "2026-02-20T22:07:13Z",
+            "build_time_s": 306.0,
+            "display_title": "Bump github/codeql-action from 4.32.1 to 4.32.3 in the github-actions\u2026"
         },
         {
             "hash": "46432f8833c379d0adda12bac552fd149ec93251",
-            "created_at": "2026-02-22T14:16:43Z"
+            "created_at": "2026-02-22T14:16:43Z",
+            "build_time_s": 495.0,
+            "display_title": "Use csignal header in Assert.h (#273)"
         },
         {
             "hash": "e7c5aad95c969638b60f72bfbdf2bd77a31c227d",
-            "created_at": "2026-02-22T16:06:11Z"
+            "created_at": "2026-02-22T16:06:11Z",
+            "build_time_s": 526.0,
+            "display_title": "Show stack trace on SEH exceptions (#275)"
         },
         {
             "hash": "e7651d142efe37aa24d23e5254572ba204716a71",
-            "created_at": "2026-03-06T21:52:33Z"
+            "created_at": "2026-03-06T21:52:33Z",
+            "build_time_s": 309.0,
+            "display_title": "Fix installation of ccache on CI (#283)"
         },
         {
             "hash": "b0f8a9c14d39c0c5d74915342cd16a3140082665",
-            "created_at": "2026-03-06T22:44:11Z"
+            "created_at": "2026-03-06T22:44:11Z",
+            "build_time_s": 309.0,
+            "display_title": "Refactor trace code (#282)"
         },
         {
             "hash": "d9f223e14e9ef6d2e4ddada249d194f3e34be052",
-            "created_at": "2026-03-06T23:25:18Z"
+            "created_at": "2026-03-06T23:25:18Z",
+            "build_time_s": 480.0,
+            "display_title": "Fix ordering of graph nodes and transitioning/usage of resources (#274)"
         },
         {
             "hash": "4562eb07b584fac1d0a1d7f5c5039ff232ff5053",
-            "created_at": "2026-03-06T23:35:16Z"
+            "created_at": "2026-03-06T23:35:16Z",
+            "build_time_s": 370.0,
+            "display_title": "Bump the github-actions group with 3 updates (#281)"
         },
         {
             "hash": "f9f9c7c51cfcde163d7b24e4e26916d8acc8d6b4",
-            "created_at": "2026-03-07T22:59:31Z"
+            "created_at": "2026-03-07T22:59:31Z",
+            "build_time_s": 313.0,
+            "display_title": "Refactor CompletionState to be externally synchronised (#284)"
         },
         {
             "hash": "374ef9cffae333869453f752f6d60ce5515f5fee",
-            "created_at": "2026-03-07T23:22:31Z"
+            "created_at": "2026-03-07T23:22:31Z",
+            "build_time_s": 325.0,
+            "display_title": "Show Vulkan info on CI (#285)"
         },
         {
             "hash": "f514138cedde1ebe069ae9cd7f2811d210583198",
-            "created_at": "2026-03-08T05:00:19Z"
+            "created_at": "2026-03-08T05:00:19Z",
+            "build_time_s": 3108.0,
+            "display_title": "Bump github.com/microsoft/vcpkg from master to 2026.02.27 in the vcpk\u2026"
         },
         {
             "hash": "d1dad8ab115ed8f73a52285a2d12477323a73304",
-            "created_at": "2026-03-10T22:04:57Z"
+            "created_at": "2026-03-10T22:04:57Z",
+            "build_time_s": 570.0,
+            "display_title": "Disable gtest catching exceptions (#291)"
         },
         {
             "hash": "c77d56bf6f88a011ab6a3d3925749631cc463316",
-            "created_at": "2026-03-11T00:23:49Z"
+            "created_at": "2026-03-11T00:23:49Z",
+            "build_time_s": 507.0,
+            "display_title": "Move instance creation to own file and rework extension management (#\u2026"
         },
         {
             "hash": "c94a765255ff4a6c4e0674ffe3c0e1f932f4260a",
-            "created_at": "2026-03-11T03:29:32Z"
+            "created_at": "2026-03-11T03:29:32Z",
+            "build_time_s": 333.0,
+            "display_title": "Fix CI warnings about missing coverage files (#292)"
         },
         {
             "hash": "970d8275aab62d56a2148c90c4ce96248cad7375",
-            "created_at": "2026-03-12T22:11:48Z"
+            "created_at": "2026-03-12T22:11:48Z",
+            "build_time_s": 562.0,
+            "display_title": "Bump Clang version to 19 (#296)"
         },
         {
             "hash": "a6ceb94675dd48cd5f8e5472bf2b9a83256d4d7d",
-            "created_at": "2026-03-17T03:57:56Z"
+            "created_at": "2026-03-17T03:57:56Z",
+            "build_time_s": 338.0,
+            "display_title": "Use auto coverage target (#301)"
         },
         {
             "hash": "aa07814e8d16d2c4b8f1ddcf105515d0c7c79cd3",
-            "created_at": "2026-03-17T19:40:04Z"
+            "created_at": "2026-03-17T19:40:04Z",
+            "build_time_s": 335.0,
+            "display_title": "[pre-commit.ci] pre-commit autoupdate (#297)"
         },
         {
             "hash": "43211373c4704d02d79b8506ab0ab35a6d94971d",
-            "created_at": "2026-03-17T20:09:50Z"
+            "created_at": "2026-03-17T20:09:50Z",
+            "build_time_s": 437.0,
+            "display_title": "Move presentation code into surface class (#298)"
         },
         {
             "hash": "882be0ca8090cc71e8c1075fb3bd5ec0e95a06a7",
-            "created_at": "2026-03-20T00:58:28Z"
+            "created_at": "2026-03-20T00:58:28Z",
+            "build_time_s": 359.0,
+            "display_title": "Require VK_EXT_headless_surface when requesting headless surface (#300)"
         },
         {
             "hash": "d3b2f2abe4dcacc3f3ccde623c603ab6f317171f",
-            "created_at": "2026-03-20T22:14:45Z"
+            "created_at": "2026-03-20T22:14:45Z",
+            "build_time_s": 401.0,
+            "display_title": "Make ExecuteGraph GPU workload asynchronous (#299)"
         },
         {
             "hash": "db1aa9637ddb7563796ff173eac4a97e0a0e0ea5",
-            "created_at": "2026-03-23T20:32:48Z"
+            "created_at": "2026-03-23T20:32:48Z",
+            "build_time_s": 524.0,
+            "display_title": "Compare pixels in surface tests (#304)"
         },
         {
             "hash": "e68ca9efc60bc1346918241773c5b02712ae1a17",
-            "created_at": "2026-07-22T22:17:12Z"
+            "created_at": "2026-07-22T22:17:12Z",
+            "build_time_s": 943.0,
+            "display_title": "[CI] Update dependencies monthly instead of weekly"
         }
     ]
 }
