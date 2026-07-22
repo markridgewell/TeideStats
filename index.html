@@ -18,7 +18,9 @@
             let node = document.getElementById('commit-list');
             let ul = document.createElement('ul');
 
-            commitHashes = data.commits.map((commit) => commit.hash);
+            let durationThreshold_s = 60 * 60
+
+            commitHashes = data.commits.filter((commit) => commit.build_time_s <= durationThreshold_s).map((commit) => commit.hash);
             chart = new Chart(document.getElementById('chart'), {
                 type: 'line',
                 data: {
@@ -55,11 +57,7 @@
             });
 
             data.commits.forEach(commit => {
-                duration_s = commit.build_time_s
-                if (duration_s > 60 * 60 /* one hour */) {
-                    return
-                }
-                console.log(commit)
+                duration_ms = commit.build_time_s * 1000
 
                 let li = document.createElement('li');
                 {
@@ -72,12 +70,12 @@
                     }
 
                     li.appendChild(a);
-                    li.appendChild(document.createTextNode(' (' + asMinutesSeconds(duration_s * 1000) + ')'));
+                    li.appendChild(document.createTextNode(' (' + asMinutesSeconds(duration_ms) + ')'));
                 }
                 ul.appendChild(li);
 
                 const index = commitHashes.indexOf(commit.hash);
-                chart.data.datasets[0].data[index] = duration_s * 1000;
+                chart.data.datasets[0].data[index] = duration_ms;
                 chart.update();
             });
             node.appendChild(ul);
