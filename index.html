@@ -55,6 +55,11 @@
             });
 
             data.commits.forEach(commit => {
+                duration_s = commit.build_time_s
+                if (duration_s > 60 * 60 /* one hour */) {
+                    return
+                }
+
                 let a = document.createElement('a');
                 a.id = commit.hash;
                 a.href = 'run.html?commit=' + commit.hash;
@@ -63,20 +68,13 @@
                 li.appendChild(a);
                 ul.appendChild(li);
 
-                fetchJson('./build_times/' + commit.hash + '.json')
-                    .then((commitData) => {
-                        duration = getElapsedTime(commitData.run_data);
-                        if (duration > 60 * 60 * 1000) { // one hour
-                            return
-                        }
-                        elem = document.getElementById(commitData.run_data.head_sha);
-                        elem.appendChild(document.createTextNode(' ' + commitData.run_data.display_title));
-                        elem.parentElement.appendChild(document.createTextNode(' (' + asMinutesSeconds(duration) + ')'));
+                elem = document.getElementById(commit.hash);
+                elem.appendChild(document.createTextNode(' ' + commit.display_title));
+                elem.parentElement.appendChild(document.createTextNode(' (' + asMinutesSeconds(duration_s * 1000) + ')'));
 
-                        const index = commitHashes.indexOf(commit.hash);
-                        chart.data.datasets[0].data[index] = duration;
-                        chart.update();
-                    });
+                const index = commitHashes.indexOf(commit.hash);
+                chart.data.datasets[0].data[index] = duration;
+                chart.update();
             });
             node.appendChild(ul);
         }
